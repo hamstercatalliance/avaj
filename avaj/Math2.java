@@ -6,7 +6,7 @@ package avaj;
  * @author Elaine Cui
  * @author Ranjit Paintal
  */
-public class Math2
+public final class Math2
 {
     /**
      * Returns a random integer between min and max.
@@ -61,5 +61,45 @@ public class Math2
         }
         
         return normalizedVector;
+    }
+
+    /**
+     * Calculates the dot product of two vectors (arrays of doubles).
+     * 
+     * @param vectorA the first vector
+     * @param vectorB the second vector
+     * @return the dot product of the two vectors
+     * @throws IllegalArgumentException if the vectors are of different lengths
+     */
+    public static double[] dotProduct(double[] vectorA, double[] vectorB) throws IllegalArgumentException
+    {
+        if (vectorA.length != vectorB.length)
+        {
+            throw new IllegalArgumentException("Vectors must be of the same length");
+        }
+        
+        double[] result = new double[vectorA.length];
+        for (int i = 0; i < vectorA.length; i++)
+        {
+            result[i] = vectorA[i] * vectorB[i];
+        }
+        
+        return result;
+    }
+
+    /**
+     * Calculates the magnitude (length) of a vector (array of doubles).
+     * 
+     * @param vector the vector to calculate the magnitude of
+     * @return the magnitude of the vector
+     */
+    public static double magnitude(double[] vector)
+    {
+        double sum = 0;
+        for (double component : vector)
+        {
+            sum += component * component;
+        }
+        return Math.sqrt(sum);
     }
 }
