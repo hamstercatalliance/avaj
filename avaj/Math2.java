@@ -102,4 +102,24 @@ public final class Math2
         }
         return Math.sqrt(sum);
     }
+
+
+
+    /**
+     * Calculates factorial of any integer n, where n >= 0
+     * 
+     * @param n the number to calculate factorial of
+     * @return factorial of n (n!)
+     * @throws IllegalArgumentException if n < 0
+     */
+    public static int factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Factorial does not take input less than 0.");
+        }
+        int f = 1;
+        for (int i = 1; i <= n; i++) {
+            f *= i;
+        }
+        return f;
+    }
 }
