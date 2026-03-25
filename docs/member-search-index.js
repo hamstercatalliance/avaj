@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"avaj","c":"Math2","l":"Math2()","u":"%3Cinit%3E()","k":"3"},{"p":"avaj","c":"Math2","l":"normalize(double[])","k":"6"},{"p":"avaj","c":"Math2","l":"randomInt(int, int)","u":"randomInt(int,int)","k":"6"},{"p":"avaj","c":"Math2","l":"round(double, int)","u":"round(double,int)","k":"6"}];updateSearchResults();
