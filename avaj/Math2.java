@@ -106,11 +106,11 @@ public final class Math2
 
 
     /**
-     * Calculates factorial of any integer n, where n >= 0
+     * Calculates factorial of integer n, where n &gt;= 0
      * 
      * @param n the number to calculate factorial of
      * @return factorial of n (n!)
-     * @throws IllegalArgumentException if n < 0
+     * @throws IllegalArgumentException if n &lt; 0
      */
     public static int factorial(int n) {
         if (n < 0) {
