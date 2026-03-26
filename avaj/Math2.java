@@ -112,7 +112,8 @@ public final class Math2
      * @return factorial of n (n!)
      * @throws IllegalArgumentException if n &lt; 0
      */
-    public static int factorial(int n) {
+    public static int factorial(int n) 
+    {
         if (n < 0) {
             throw new IllegalArgumentException("Factorial does not take input less than 0.");
         }
@@ -121,5 +122,43 @@ public final class Math2
             f *= i;
         }
         return f;
+    }
+
+    /**
+     * Calculates the logarithm of a value to a specified base.
+     * 
+     * @param value the value to calculate the logarithm of
+     * @param base the base of the logarithm
+     * @return the logarithm of the value to the specified base
+     */
+    public static double log(double value, double base) 
+    {
+        return Math.log(value) / Math.log(base);
+    }
+
+    /**
+     * Transposes a 2D array (matrix) of doubles. The input matrix is expected to be rectangular (all rows have the same number of columns).
+     * 
+     * @param matrix the 2D array to transpose
+     * @param row the number of rows in the input matrix
+     * @param col the number of columns in the input matrix
+     * @return the transposed matrix
+     * @throws IllegalArgumentException if the input matrix is not rectangular (jagged) or if row/col do not match the actual dimensions of the matrix
+     */
+    public static double[][] transpose(double[][] matrix, int row, int col) throws IllegalArgumentException
+    {
+        // Check for jagged (staggered) arrays
+        for (int i = 0; i < row; i++) {
+            if (matrix[i] == null || matrix[i].length != col) {
+                throw new IllegalArgumentException("Input matrix is not rectangular at row " + i);
+            }
+        }
+        double[][] transposed = new double[col][row];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                transposed[j][i] = matrix[i][j];
+            }
+        }
+        return transposed;
     }
 }
