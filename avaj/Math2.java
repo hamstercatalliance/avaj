@@ -71,17 +71,17 @@ public final class Math2
      * @return the dot product of the two vectors
      * @throws IllegalArgumentException if the vectors are of different lengths
      */
-    public static double[] dotProduct(double[] vectorA, double[] vectorB) throws IllegalArgumentException
+    public static double dotProduct(double[] vectorA, double[] vectorB) throws IllegalArgumentException
     {
         if (vectorA.length != vectorB.length)
         {
             throw new IllegalArgumentException("Vectors must be of the same length");
         }
         
-        double[] result = new double[vectorA.length];
+        double result = 0;
         for (int i = 0; i < vectorA.length; i++)
         {
-            result[i] = vectorA[i] * vectorB[i];
+            result += vectorA[i] * vectorB[i];
         }
         
         return result;
